@@ -1,0 +1,120 @@
+body,html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+ } 
+
+ .solar__system{
+   position: absolute;
+   background-image: url('.//icon/original.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: 1;   
+ }
+
+
+ .galaxy{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   transform: rotateX(75deg) rotateY(0deg);
+   transform-style: preserve-3d; 
+
+
+ }
+ .earth{
+   background-image: url('.//icon/9-2-earth-png.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 35%;
+   height: 100%;
+   transform: rotateX(-90deg);
+
+
+ }
+
+ .satellite {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+
+  border-radius: 50%;
+  animation-name: satellite ;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+
+}
+
+ .orbita {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid rgb(109, 107, 107);
+  border-radius: 50%;
+
+
+  animation-name: orbita;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-style: preserve-3d;
+}
+
+ @keyframes orbita {
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(-360deg);
+  }
+}
+
+
+
+@keyframes satellite {
+  0% {
+    transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
+    background-color: rgb(218, 218, 218);
+  }
+
+  50% {
+    background-color: rgb(180, 180, 180);
+    box-shadow: 2px -1px 10px 13px rgba(34, 60, 80, 0.2) inset;
+    ;
+  }
+
+  70% {
+    background-color: rgb(180, 180, 180);
+    box-shadow: -19px 11px 10px 1px rgba(34, 60, 80, 0.2) inset;
+  }
+
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    background-color: rgb(218, 218, 218);
+  }
+}
+
+#moon.orbita {
+  width: 12em;
+  height: 12em;
+  margin-top: -4em;
+  margin-left: -6em;
+
+  animation-duration: 5s;  
+}
+
+#moon {
+  font-size: 4em;
+}
+#moon .satellite {
+  left: 50%;
+  top: -40px;
+
+  animation-duration: 5s;  
+
+}
+
